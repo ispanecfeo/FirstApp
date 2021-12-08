@@ -4,15 +4,128 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTintMode="screen"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="27dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lbl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/name"
+                android:text="Name:"
+                android:textAlignment="viewStart"
+                android:textEditSideNoPasteWindowLayout="?android:attr/textEditPasteWindowLayout"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
+
+            <TextView
+                android:id="@+id/lbl2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/sername"
+                android:text="@string/sername"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/sername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
+
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:checked="false"
+                android:text=""
+                android:textDirection="anyRtl"
+                android:textOff="male"
+                android:textOn="famel"
+                android:textSize="16sp"
+                android:thumb="@android:drawable/button_onoff_indicator_on"
+                app:showText="true"
+                app:thumbTextPadding="@android:dimen/app_icon_size"
+                app:thumbTint="@color/teal_200"
+                app:thumbTintMode="multiply"
+                app:trackTintMode="src_over" />
+            <TextView
+                android:id="@+id/lbl3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/calendarView"
+                android:text="Date of born:"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="auto"
+                android:maxDate="12/31/2021"
+                android:minDate="01/01/1950"
+                android:nestedScrollingEnabled="true"
+                android:scrollbarStyle="outsideOverlay"
+                android:selectedDateVerticalBar="@color/purple_200" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/isStudent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Are You student?" />
+
+                <ToggleButton
+                    android:id="@+id/toggleButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:textOff="no"
+                    android:textOn="higher education" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/finishBtn"
+                style="@android:style/Widget.Material.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:stateListAnimator="@android:anim/fade_in"
+                android:text="Finish!"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
